@@ -1,0 +1,19 @@
+.data-indicator{
+    width: 258px;
+    height: 124px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #FBFBFB;
+    margin-bottom: 39px;
+}
+
+.data-indicator-type{
+    margin: 0;
+}
+.data-indicator-value{
+    font-size: 20px;
+    font-weight: 700;
+}
