@@ -4,19 +4,23 @@ import Sidebar from "./Components/Sidebar";
 import PageContent from "./Components/PageContent";
 import { React, useState, useEffect } from "react";
 
+
 const url = "http://localhost:3000/user/12";
 
 function App() {
-    const [data, dataSet] = useState(null);
+    const [name,setName] = useState("")
+    const [keyData, setKeyData] = useState([])
 
     useEffect(() => {
-        async function fetchMyAPI() {
-          let response = await fetch(url)
-          response = await response.json()
-          dataSet(response)
-        }
-        fetchMyAPI()
-      }, [dataSet])
+        loadData();
+    }, [])
+
+    const loadData = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        setName(data.data.userInfos.firstName)
+        setKeyData(data.data.keyData)
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -24,7 +28,7 @@ function App() {
             </header>
             <main>
                 <Sidebar />
-                <PageContent name={data.data.userInfos.firstName}></PageContent>
+                <PageContent keyData={keyData} name={name}></PageContent>
             </main>
         </div>
     );

@@ -14,8 +14,8 @@ const PageContent = (props) => {
     return (
         <div className="content-main">
             <header className="content-header">
-                <h1 className="content-header-welcome">Bienvenue {props.name}</h1>
-                <p className="content-header-message">Message de Bienvenue</p>
+                <h1 className="content-header-welcome">Bienvenue <strong className="content-header-welcome-userName">{props.name}</strong></h1>
+                <p className="content-header-message">Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
             </header>
             <div className="content-charts-wrapper">
                 <div>
@@ -31,15 +31,15 @@ const PageContent = (props) => {
                             <HexaChart></HexaChart>
                         </div>
                         <div className="chartWrapper">
-                            <ProgChart />
+                            <ProgChart/>
                         </div>
                     </div>
                 </div>
                 <div className="content-data-indicator-column">
-                    <DataIndicator type={"Calories"} icon={fireIcon} iconSize={"20px"} color={"rgb(255, 0, 0, 0.07)"}/>
-                    <DataIndicator type={"Protéines"} icon={proteinesIcon} iconSize={"20px"} color={"#4AB8FF1A"}/>
-                    <DataIndicator type={"Glucides"} icon={appleIcon} iconSize={"20px"} color={"rgb(249, 206, 35, 0.2)"}/>
-                    <DataIndicator type={"Lipides"} icon={cheeseburgerIcon} iconSize={"20px"} color={"#FD51811A"}/>
+                    <DataIndicator keyData={props.keyData.calorieCount + "kCal"} type={"Calories"} icon={fireIcon} iconSize={"20px"} color={"rgb(255, 0, 0, 0.07)"}/>
+                    <DataIndicator keyData={props.keyData.proteinCount + "g"} type={"Protéines"} icon={proteinesIcon} iconSize={"20px"} color={"#4AB8FF1A"}/>
+                    <DataIndicator keyData={props.keyData.carbohydrateCount + "g"} type={"Glucides"} icon={appleIcon} iconSize={"20px"} color={"rgb(249, 206, 35, 0.2)"}/>
+                    <DataIndicator keyData={props.keyData.lipidCount + "g"} type={"Lipides"} icon={cheeseburgerIcon} iconSize={"20px"} color={"#FD51811A"}/>
                 </div>
             </div>
         </div>

@@ -1,39 +1,40 @@
-import React from "react";
-import { PieChart, Pie, Label, Cell } from "recharts";
+import { React, useEffect, useState } from "react";
+import { Pie, PieChart, Cell, Label, Legend } from "recharts";
 import CustomLabel from "./CustomLabel";
 
-const data02 = [
-    { name: "Bubble Tea Sold", value: 0 },
-    { name: "Bubble Tea Left", value: 0 },
-    { name: "no value", value: 1 },
-];
-
 const ProgChart = () => {
+    const url = "http://localhost:3000/user/12";
+    const [perct, setPerct] = useState(0);
+    const [data, setData] = useState([]);
+
+    const loadData = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        setPerct(data.data.todayScore);
+        setData([
+            { value: perct, name: "dailyProg" },
+            { value: 1 - perct, name: "difference" },
+        ]);
+    };
+
+    useEffect(() => {
+        loadData();
+    });
+
     return (
-        <React.Fragment>
-            <PieChart width={217} height={217}>
-                <Pie
-                    data={data02}
-                    cx="50%"
-                    cy="50%"
-                    dataKey="value" // make sure to map the dataKey to "value"
-                    innerRadius={60} // the inner and outer radius helps to create the progress look
-                    outerRadius={80}
-                >
-                    {data02.map((entry, index) => {
-                        if (index === 1 || index === 2) {
-                            return <Cell key={`cell-${index}`} fill="#f3f6f9" />;
-                        }
-                        return <Cell key={`cell-${index}`} fill="red" />;
-                    })}
-                    <Label content={<CustomLabel noOfBubbleTeaSold={data02[0].value} />} position="center" />
-                </Pie>
-            </PieChart>
-        </React.Fragment>
+        <PieChart position="center" width={260} height={260}>
+            <Pie data={data} cx="50%" cy="50%" dataKey="value" innerRadius={72} outerRadius={85}>
+                {data.map((entry, index) => {
+                    if (index === 1) {
+                        return <Cell key={`cell-${index}`} fill="lightgrey" />; 
+                    }
+                    return <Cell key={`cell-${index}`} fill="#E60000" />;
+                })}
+                <Label content={<CustomLabel perct={perct*100} />} position="center" />
+                <Legend width={100} payload={"Score"} align={"left"} verticalAlign={"top"} />
+            </Pie>
+        </PieChart>
     );
 };
 
 export default ProgChart;
-
-
-// credit : https://celiaongsl.medium.com/2-secret-pie-chart-hacks-to-up-your-recharts-game-hack-recharts-1-9fa62ff9416a    

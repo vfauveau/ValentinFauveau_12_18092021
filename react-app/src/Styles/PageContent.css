@@ -7,6 +7,10 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom : 41px ;
 }
+.content-header-welcome-userName{
+    color:#E60000;
+    
+}
 .content-header-message{
     font-size: 18px;
     font-weight: 400;
@@ -18,6 +22,7 @@
     height: 263px;
     overflow: hidden;
     background-color: #FBFBFB;
+    border-radius: 5px;
 }
 .content-charts-wrapper{
     display: flex;
@@ -31,4 +36,8 @@
 }
 .content-data-indicator-column{
     margin-left: 5%;
+}
+.Large-ChartWrapper{
+    width: 835px;
+    height: 320px;
 }
