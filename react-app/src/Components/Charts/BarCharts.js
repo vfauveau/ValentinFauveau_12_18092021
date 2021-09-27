@@ -1,13 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { ResponsiveContainer ,BarChart, CartesianGrid, XAxis, Tooltip, Legend, Bar, YAxis } from "recharts";
 
-const url = "http://localhost:3000/user/12/activity";
-const BarCharts = () => {
+
+const BarCharts = (props) => {
+    const url = "http://localhost:3000/user/" + props.id + "/activity";
     const [sessions, setSessions] = useState([]);
 
     useEffect(() => {
         loadData();
-    }, []);
+    });
 
     const loadData = async () => {
         const response = await fetch(url);

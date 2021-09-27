@@ -1,36 +1,23 @@
 import "./App.css";
-import NavHeader from "./Components/NavHeader";
-import Sidebar from "./Components/Sidebar";
-import PageContent from "./Components/PageContent";
-import { React, useState, useEffect } from "react";
-
-
-const url = "http://localhost:3000/user/12";
+import { React } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Components/Home";
+import UserPage from "./Components/Userpage";
+import NavHeader from "./Components/NavHeader"
+import ErrorPage from "./Components/ErrorPage"
 
 function App() {
-    const [name,setName] = useState("")
-    const [keyData, setKeyData] = useState([])
-
-    useEffect(() => {
-        loadData();
-    }, [])
-
-    const loadData = async () => {
-        const response = await fetch(url);
-        const data = await response.json();
-        setName(data.data.userInfos.firstName)
-        setKeyData(data.data.keyData)
-    }
     return (
-        <div className="App">
+        <Router>
             <header className="App-header">
                 <NavHeader />
             </header>
-            <main>
-                <Sidebar />
-                <PageContent keyData={keyData} name={name}></PageContent>
-            </main>
-        </div>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/user/:id" component={UserPage} />
+                <Route component={ErrorPage} />
+            </Switch>
+        </Router>
     );
 }
 

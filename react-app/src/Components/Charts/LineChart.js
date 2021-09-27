@@ -1,14 +1,13 @@
 import { React, useEffect, useState } from "react";
 import { ResponsiveContainer,LineChart, XAxis, Tooltip, Legend, Line } from "recharts";
 
-const url = "http://localhost:3000/user/12/average-sessions"
-
-const MoyenneChart = () => {
+const MoyenneChart = (props) => {
+    const url = "http://localhost:3000/user/"+ props.id +"/average-sessions"
     const [averageS, setAverageS] = useState([]);
 
     useEffect(() => {
         loadData();
-    }, []);
+    });
 
     const loadData = async () => {
         const response = await fetch(url);

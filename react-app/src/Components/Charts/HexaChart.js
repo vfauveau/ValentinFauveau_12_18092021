@@ -1,13 +1,13 @@
 import {React, useEffect, useState} from "react";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from "recharts";
 
-const HexaChart = () => {
-    const url = "http://localhost:3000/user/12/performance";
+const HexaChart = (props) => {
+    const url = "http://localhost:3000/user/" + props.id +  "/performance";
     const [perf, setPerf] = useState(null);
 
     useEffect(() => {
         loadData();
-    }, []);
+    });
 
     const loadData = async () => {
         const response = await fetch(url);

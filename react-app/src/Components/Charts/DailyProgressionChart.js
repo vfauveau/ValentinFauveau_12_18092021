@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from "react";
 import { Pie, PieChart, Cell, Label, Legend } from "recharts";
-import CustomLabel from "./CustomLabel";
+import CustomLabel from "../CustomLabel.js";
 
-const ProgChart = () => {
-    const url = "http://localhost:3000/user/12";
+const ProgChart = (props) => {
+    const url = "http://localhost:3000/user/" + props.id;
     const [perct, setPerct] = useState(0);
     const [data, setData] = useState([]);
 

@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Styles/NavHeader.css";
-import Logo from "../assets/logo.png"
-import FetchData from "./FetchData";
+import Logo from "../assets/logo.png";
 const NavHeader = () => {
     return (
         <React.Fragment>
-            <div className="logo-wrapper">
-                <img className="logo-image" src={Logo} alt="Sportify Logo"></img>
-                <p className="logo-title"></p>
-            </div>
+            <Link to={"/"}>
+                <div className="logo-wrapper">
+                    <img className="logo-image" src={Logo} alt="Sportify Logo"></img>
+                    <p className="logo-title"></p>
+                </div>
+            </Link>
             <nav className="header-wrapper">
                 <ul className="header-list">
                     <li>Accueil</li>
@@ -17,7 +19,6 @@ const NavHeader = () => {
                     <li>Communauté</li>
                 </ul>
             </nav>
-            <FetchData></FetchData>
         </React.Fragment>
     );
 };

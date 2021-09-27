@@ -1,9 +1,9 @@
 import React from "react";
 import "../Styles/PageContent.css";
-import BarCharts from "./BarCharts";
-import HexaChart from "./HexaChart";
-import MoyenneChart from "./LineChart";
-import ProgChart from "./DailyProgressionChart";
+import BarCharts from "./Charts/BarCharts";
+import HexaChart from "./Charts/HexaChart";
+import MoyenneChart from "./Charts/LineChart";
+import ProgChart from "./Charts/DailyProgressionChart";
 import DataIndicator from "./DataIndicator";
 import fireIcon from "../assets/fire.svg"
 import cheeseburgerIcon from "../assets/cheeseburger.svg"
@@ -20,18 +20,18 @@ const PageContent = (props) => {
             <div className="content-charts-wrapper">
                 <div>
                     <div className="Large-ChartWrapper">
-                        <BarCharts></BarCharts>
+                        <BarCharts id={props.id}></BarCharts>
                     </div>
 
                     <div className="content-charts">
                         <div className="chartWrapper">
-                            <MoyenneChart></MoyenneChart>
+                            <MoyenneChart id={props.id}></MoyenneChart>
                         </div>
                         <div className="chartWrapper">
-                            <HexaChart></HexaChart>
+                            <HexaChart id={props.id}></HexaChart>
                         </div>
                         <div className="chartWrapper">
-                            <ProgChart/>
+                            <ProgChart id={props.id}/>
                         </div>
                     </div>
                 </div>
