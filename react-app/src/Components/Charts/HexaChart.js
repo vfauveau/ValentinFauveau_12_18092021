@@ -4,6 +4,7 @@ import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } fro
 const HexaChart = (props) => {
     const url = "http://localhost:3000/user/" + props.id +  "/performance";
     const [perf, setPerf] = useState(null);
+    const [kind, setKind] = useState([]);
 
     useEffect(() => {
         loadData();
@@ -13,6 +14,8 @@ const HexaChart = (props) => {
         const response = await fetch(url);
         const data = await response.json();
         setPerf(data.data.data)
+        setKind(data.data.kind)
+        // TO DO - mettre le type de sport dans les coins du graph - modifier les données
     };
 
     return (

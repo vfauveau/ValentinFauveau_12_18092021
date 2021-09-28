@@ -6,6 +6,7 @@ import musculationIcon from "../assets/musculation.svg"
 import natationIcon from "../assets/natation.svg"
 import bikeIcon from "../assets/bike.svg"
 
+//Sidebar component which displays different icons
 const Sidebar  = () => {
     return <aside id="sidebar" className="Sidebar">
         <div className="sidebar-icons-wrapper">

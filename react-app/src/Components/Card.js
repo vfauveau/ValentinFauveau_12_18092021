@@ -1,9 +1,10 @@
 import React from "react";
 import "../Styles/DataIndicator.css";
 import Icon from "./Icon";
+import propTypes from "prop-types"
 
 
-const DataIndicator = (props) => {
+const Card = (props) => {
     return (
         <div className="data-indicator">
             <Icon icon={props.icon} color={props.color} size={"60px"} iconSize={props.iconSize}/>
@@ -15,4 +16,9 @@ const DataIndicator = (props) => {
     );
 };
 
-export default DataIndicator;
+Card.propTypes = {
+    icon: propTypes.string,
+    color: propTypes.string,
+    iconSize: propTypes.string
+}
+export default Card;

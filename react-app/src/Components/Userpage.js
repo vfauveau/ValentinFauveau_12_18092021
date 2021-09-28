@@ -1,6 +1,7 @@
 import { useEffect, useState, React } from "react";
 import Sidebar from "../Components/Sidebar";
 import PageContent from "../Components/PageContent";
+import propTypes from "prop-types"
 
 function Userpage(props) {
     const [name, setName] = useState("");
@@ -25,5 +26,9 @@ function Userpage(props) {
         </main>
     );
 }
-
+Userpage.propTypes = {
+    id: propTypes.string,
+    keyData: propTypes.array,
+    name: propTypes.string
+}
 export default Userpage;

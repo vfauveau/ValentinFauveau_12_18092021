@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
-import { Pie, PieChart, Cell, Label, Legend } from "recharts";
-import CustomLabel from "../CustomLabel.js";
+import { Pie, PieChart, Cell, Label } from "recharts";
+import CustomLabel from "../CustomChartElements/CustomLabel.js";
 
 const ProgChart = (props) => {
     const url = "http://localhost:3000/user/" + props.id;
@@ -26,12 +26,11 @@ const ProgChart = (props) => {
             <Pie data={data} cx="50%" cy="50%" dataKey="value" innerRadius={72} outerRadius={85}>
                 {data.map((entry, index) => {
                     if (index === 1) {
-                        return <Cell key={`cell-${index}`} fill="lightgrey" />; 
+                        return <Cell key={`cell-${index}`} fill="lightgrey" />;
                     }
                     return <Cell key={`cell-${index}`} fill="#E60000" />;
                 })}
-                <Label content={<CustomLabel perct={perct*100} />} position="center" />
-                <Legend width={100} payload={"Score"} align={"left"} verticalAlign={"top"} />
+                <Label content={<CustomLabel perct={perct * 100} />} position="center" />
             </Pie>
         </PieChart>
     );
