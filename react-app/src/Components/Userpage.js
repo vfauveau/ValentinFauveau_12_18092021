@@ -1,34 +1,15 @@
-import { useEffect, useState, React } from "react";
+import { React} from "react";
 import Sidebar from "../Components/Sidebar";
 import PageContent from "../Components/PageContent";
-import propTypes from "prop-types"
+import dataModelling from "../DataFormat";
 
-function Userpage(props) {
-    const [name, setName] = useState("");
-    const [keyData, setKeyData] = useState([]);
-    // conditionnal render to set up
-    const url = "http://localhost:3000/user/" + props.match.params.id;
-
-    const loadData = async () => {
-        const response = await fetch(url);
-        const data = await response.json();
-        setName(data.data.userInfos.firstName);
-        setKeyData(data.data.keyData);
-    };
-    useEffect(() => {
-        loadData();
-    });
-
+function Userpage() {
+    var data = dataModelling()
     return (
         <main>
             <Sidebar />
-            <PageContent id={props.match.params.id.toString()} keyData={keyData} name={name}></PageContent>
+            <PageContent data={data} name={data[0].userInfos.firstName} keyData={data[0].keyData}></PageContent>
         </main>
     );
-}
-Userpage.propTypes = {
-    id: propTypes.string,
-    keyData: propTypes.array,
-    name: propTypes.string
 }
 export default Userpage;

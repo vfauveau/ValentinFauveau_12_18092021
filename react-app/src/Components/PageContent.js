@@ -23,19 +23,19 @@ const PageContent = (props) => {
             <div className="content-charts-wrapper">
                 <div>
                     <div className="Large-ChartWrapper">
-                        <BarCharts id={props.id}></BarCharts>
+                        <BarCharts data={props.data}></BarCharts>
                     </div>
 
                     <div className="content-charts">
                         <div className="chartWrapper">
-                            <MoyenneChart id={props.id}></MoyenneChart>
+                            <MoyenneChart data={props.data}></MoyenneChart>
                         </div>
                         <div className="chartWrapper">
-                            <HexaChart id={props.id}></HexaChart>
+                            <HexaChart data={props.data}></HexaChart>
                         </div>
                         <div className="chartWrapper">
                             <p style={{ fontWeight: "600", paddingLeft: "30px", paddingTop: "24px", position: "absolute" }}>Score</p>
-                            <ProgChart id={props.id} />
+                            <ProgChart data={props.data} />
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,6 @@ const PageContent = (props) => {
 };
 PageContent.propTypes = {
     name: propTypes.string,
-    id: propTypes.string,
     icon: propTypes.string,
 };
 export default PageContent;

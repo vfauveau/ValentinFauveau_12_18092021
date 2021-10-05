@@ -1,23 +1,11 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { LineChart, XAxis, Tooltip, Line, Label, ResponsiveContainer } from "recharts";
 
 const MoyenneChart = (props) => {
-    const url = "http://localhost:3000/user/" + props.id + "/average-sessions";
-    const [averageS, setAverageS] = useState([]);
-    useEffect(() => {
-        loadData();
-    });
-
-    const loadData = async () => {
-        const response = await fetch(url);
-        const data = await response.json();
-        setAverageS(data.data.sessions);
-    };
-
     return (
         <ResponsiveContainer>
-            <LineChart style={{ backgroundColor: "#FF0000" }} width={280} height={120} data={averageS}>
-                <XAxis tick={{ stroke: "white", strokeWidth: 1 }} tickLine={false} axisLine={false} />
+            <LineChart style={{ backgroundColor: "#FF0000" }} width={280} height={120} data={props.data[3].sessions}>
+                <XAxis dataKey="day" tick={{ stroke: "white", strokeWidth: 1 }} tickLine={false} axisLine={false} />
                 <Label value="Durée moyenne des sessions" color={"black"} position={"center"} />
                 <Tooltip
                     contentStyle={{ width: "39px", height: "25px", padding: "0" }}

@@ -3,23 +3,19 @@ import { Pie, PieChart, Cell, Label } from "recharts";
 import CustomLabel from "../CustomChartElements/CustomLabel.js";
 
 const ProgChart = (props) => {
-    const url = "http://localhost:3000/user/" + props.id;
     const [perct, setPerct] = useState(0);
-    const [data, setData] = useState([]);
-
-    const loadData = async () => {
-        const response = await fetch(url);
-        const data = await response.json();
-        setPerct(data.data.todayScore);
-        setData([
-            { value: perct, name: "dailyProg" },
-            { value: 1 - perct, name: "difference" },
-        ]);
-    };
+    const [data, setData] = useState([0]);
 
     useEffect(() => {
+        const loadData = async () => {
+            setPerct(props.data[0].todayScore);
+            setData([
+                { value: perct, name: "dailyProg" },
+                { value: 1 - perct, name: "difference" },
+            ]);
+        };
         loadData();
-    });
+    }, [perct, props.data]);
 
     return (
         <PieChart position="center" width={260} height={260}>
