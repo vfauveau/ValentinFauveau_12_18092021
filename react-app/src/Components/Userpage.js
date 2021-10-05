@@ -4,7 +4,7 @@ import PageContent from "../Components/PageContent";
 import dataModelling from "../DataFormat";
 
 function Userpage() {
-    var data = dataModelling()
+    const data = dataModelling()
     return (
         <main>
             <Sidebar />

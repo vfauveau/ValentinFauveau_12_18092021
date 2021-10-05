@@ -8,7 +8,6 @@ function dataModelling() {
     var userInfos, userHexachart, userBarchart, userAverage;
     var data = localStorage.getItem("data");
     data = JSON.parse(data);
-
     userInfos = data[0].data;
     userBarchart = data[1].data;
     userAverage = data[2].data;

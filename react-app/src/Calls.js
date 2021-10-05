@@ -1,7 +1,7 @@
 /** Checks if the user exists and fetch data
  * @param {string} user - id of the user
  */
-const unformattedData = async (user) => {
+const fetchData = async (user) => {
     const [userInfos, userActivity, userSessions, userPerf] = await Promise.all([
         fetch("http://localhost:3000/user/" + user),
         fetch("http://localhost:3000/user/" + user + "/activity"),
@@ -16,4 +16,4 @@ const unformattedData = async (user) => {
     return [user1, userAct, userAverage, userPerformance];   
 };
 
-export default unformattedData;
+export default fetchData;
