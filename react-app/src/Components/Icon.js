@@ -1,5 +1,9 @@
 import React from "react";
-
+/**
+ * Create square icons.
+ * property icon is the path to the icon.svg
+ * @ReactComponent
+ */
 const Icon = (props) => {
     return (
         <div

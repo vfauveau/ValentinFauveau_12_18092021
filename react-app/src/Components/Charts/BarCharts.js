@@ -1,5 +1,11 @@
 import { React} from "react";
 import {BarChart, CartesianGrid, XAxis, Tooltip, Legend, Bar, YAxis } from "recharts";
+/**
+ * Double bars chart
+ * @param {any} props
+ * @property props.data - userData
+ * @returns {any}
+ */
 
 const BarCharts = (props) => {
     

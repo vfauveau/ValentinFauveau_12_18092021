@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 
+/** what is displayed when the error path is taken */
 function ErrorPage() {
     return (
         <div className="App">

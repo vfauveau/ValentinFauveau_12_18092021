@@ -3,7 +3,7 @@ import "../Styles/DataIndicator.css";
 import Icon from "./Icon";
 import propTypes from "prop-types"
 
-
+/** User cards where informations are displayed */
 const Card = (props) => {
     return (
         <div className="data-indicator">

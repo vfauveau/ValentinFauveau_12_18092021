@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Styles/NavHeader.css";
 import Logo from "../assets/logo.png";
+
+/** nav menu in the header */
 const NavHeader = () => {
     return (
         <React.Fragment>
