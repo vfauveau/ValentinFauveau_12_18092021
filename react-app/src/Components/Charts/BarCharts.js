@@ -8,7 +8,7 @@ import {BarChart, CartesianGrid, XAxis, Tooltip, Legend, Bar, YAxis } from "rech
  */
 
 const BarCharts = (props) => {
-    
+
     return (
         <div width={835} height={320}>
             <div>

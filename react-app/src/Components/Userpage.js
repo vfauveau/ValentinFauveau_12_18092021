@@ -1,14 +1,16 @@
-import { React} from "react";
+import { React } from "react";
 import Sidebar from "../Components/Sidebar";
 import PageContent from "../Components/PageContent";
-import dataModelling from "../DataFormat";
-
 function Userpage() {
-    const data = dataModelling()
+    var data = JSON.parse(localStorage.getItem("data"))
+    var name = data[0].userInfos.firstName
+    var keyData = data[0].keyData
+
+
     return (
         <main>
             <Sidebar />
-            <PageContent data={data} name={data[0].userInfos.firstName} keyData={data[0].keyData}></PageContent>
+            <PageContent data={data} name={name} keyData={keyData}></PageContent>
         </main>
     );
 }

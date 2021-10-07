@@ -6,6 +6,7 @@ import UserPage from "./Components/Userpage";
 import NavHeader from "./Components/NavHeader"
 import ErrorPage from "./Components/ErrorPage"
 
+/** Router for the application, load homePage first */
 function App() {
     return (
         <Router>

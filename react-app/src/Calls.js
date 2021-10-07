@@ -13,7 +13,9 @@ const fetchData = async (user) => {
     var userAverage = await userSessions.json();
     var userPerformance = await userPerf.json();
 
-    return [user1, userAct, userAverage, userPerformance];   
+    var data = [user1, userAct, userAverage, userPerformance]
+    
+    return data;   
 };
 
 export default fetchData;

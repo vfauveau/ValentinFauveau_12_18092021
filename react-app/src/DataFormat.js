@@ -3,31 +3,37 @@
 // userHexachart = kind of exercise + value corresponding
 // userAverage = average Sessions length
 
-function dataModelling() {
-
+function dataModelling(d) {
     var userInfos, userHexachart, userBarchart, userAverage;
-    var data = localStorage.getItem("data");
-    data = JSON.parse(data);
-    userInfos = data[0].data;
-    userBarchart = data[1].data;
-    userAverage = data[2].data;
-    userHexachart = data[3].data;
+    userInfos = d[0].data;
+    // condtionnal rendering to check is the user is found, if not return the 404 page
+    // if the user is found in the data : return formated data in the localstorage + the Userpage
+    if (userInfos !== undefined) {
+        let id = userInfos.id;
+        userBarchart = d[1].data;
+        userAverage = d[2].data;
+        userHexachart = d[3].data;
 
-    // format data to pass it down to the Hexachart
-    // needed to replace numbers in data.kind by their name
-    const formatHexachart = () => {
-        delete data[3].data.kind;
-        let values = data[3].data.data;
-        let kind = ["cardio", "energy", "endurance", "strength", "speed", "intensity"];
-        let i = 0;
-        values.forEach((element) => {
-            element.kind = kind[i];
-            i++;
-        });
-        return (userHexachart = data[3].data);
-    };
-    formatHexachart();
-    data = [userInfos, userBarchart, userHexachart, userAverage];
-    return data;
+        // format data to pass it down to the Hexachart
+        // needed to replace numbers in data.kind by their name
+        const formatHexachart = () => {
+            delete d[3].data.kind;
+            let values = d[3].data.data;
+            let kind = ["cardio", "energy", "endurance", "strength", "speed", "intensity"];
+            let i = 0;
+            values.forEach((element) => {
+                element.kind = kind[i];
+                i++;
+            });
+            return (userHexachart = d[3].data);
+        };
+        formatHexachart();
+        var data = [userInfos, userBarchart, userHexachart, userAverage];
+        window.location.href = "http://localhost:3001/user/" + id;
+        localStorage.setItem("data", JSON.stringify(data));
+    }
+    else{
+        window.location.href ="http://localhost:3001/404/"
+    }
 }
 export default dataModelling;

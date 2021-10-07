@@ -1,21 +1,22 @@
 import Sidebar from "./Sidebar";
 import "../Styles/PageContent.css";
-import { Link } from "react-router-dom";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import fetchData from "../Calls";
+import dataModelling from "../DataFormat";
 
-function Home () {
-    const [userID, setstate] = useState(0)
+function Home() {
+    const [userID, setstate] = useState(0);
 
-    /** Set the userID value to the input value */  
+    /** Set the userID value to the input value */
     const handleChange = (event) => {
         setstate(event.target.value);
     };
 
     /** get the data after fetching, then store it at localstorage */
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         let data = await fetchData(userID);
-        localStorage.setItem("data", JSON.stringify(data));
+        dataModelling(data)
     };
 
     return (
@@ -23,18 +24,16 @@ function Home () {
             <main>
                 <Sidebar />
                 <div className="content-main">
-                    <form style={{ paddingTop: "50px" }} onSubmit={handleSubmit}>
-                        <label style={{margin:"0 5px"}}>
+                    <form style={{ paddingTop: "50px" }}>
+                        <label style={{ margin: "0 5px" }}>
                             Entrez votre numéro d'utilisateur
-                            <input style={{margin:"0 5px"}} type="number" value={userID} onChange={handleChange} />
+                            <input style={{ margin: "0 5px" }} type="number" value={userID} onChange={handleChange} />
                         </label>
-                        <Link onClick={handleSubmit} to={"/user/" + userID}>
-                            <button type="submit">Entrez !</button>
-                        </Link>
+                        <button onClick={handleSubmit}>test</button>
                     </form>
                 </div>
             </main>
         </div>
     );
 }
-export default Home
+export default Home;
