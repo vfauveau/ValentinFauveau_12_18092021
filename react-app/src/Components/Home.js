@@ -27,7 +27,7 @@ function Home() {
                     <form style={{ paddingTop: "50px" }}>
                         <label style={{ margin: "0 5px" }}>
                             Entrez votre numéro d'utilisateur
-                            <input style={{ margin: "0 5px" }} type="number" value={userID} onChange={handleChange} />
+                            <input min="0" style={{ margin: "0 5px" }} type="number" value={userID} onChange={handleChange} />
                         </label>
                         <button onClick={handleSubmit}>test</button>
                     </form>

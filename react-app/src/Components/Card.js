@@ -17,8 +17,10 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
+    keyData: propTypes.string,
     icon: propTypes.string,
     color: propTypes.string,
-    iconSize: propTypes.string
+    iconSize: propTypes.string,
+    type:propTypes.string
 }
 export default Card;

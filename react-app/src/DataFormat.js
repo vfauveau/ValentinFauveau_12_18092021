@@ -19,7 +19,7 @@ function dataModelling(d) {
         const formatHexachart = () => {
             delete d[3].data.kind;
             let values = d[3].data.data;
-            let kind = ["cardio", "energy", "endurance", "strength", "speed", "intensity"];
+            let kind = ["Cardio", "Energy", "Endurance", "Strength", "Speed", "Intensity"];
             let i = 0;
             values.forEach((element) => {
                 element.kind = kind[i];

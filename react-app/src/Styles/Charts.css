@@ -1,0 +1,26 @@
+.barChart-legend-wrapper{
+    padding: 15px;
+}
+.barChart-title{
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
+.barChart-legend{
+    display: inline-flex;
+}
+.circle{
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px
+}
+
+.red{
+    background-color: red;
+}
+.black{
+    background-color: black;
+}

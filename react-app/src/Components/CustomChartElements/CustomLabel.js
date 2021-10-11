@@ -23,7 +23,6 @@ const CustomLabel = ({ viewBox, perct }) => {
                         fontWeight: "500",
                         fontSize: "16px",
                         fill: "#A9A9A9",
-                        fontFamily: "Roboto",
                     }}
                 >
                     De votre objectif

@@ -53,5 +53,7 @@ const PageContent = (props) => {
 PageContent.propTypes = {
     name: propTypes.string,
     icon: propTypes.string,
+    keyData: propTypes.object,
+    data: propTypes.array
 };
 export default PageContent;

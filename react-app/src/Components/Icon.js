@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types"
 /**
  * Create square icons.
  * property icon is the path to the icon.svg
@@ -23,4 +24,10 @@ const Icon = (props) => {
     );
 };
 
+Icon.propTypes={
+    size: propTypes.string,
+    color: propTypes.string,
+    icon: propTypes.string,
+    iconSize: propTypes.string
+}
 export default Icon;
