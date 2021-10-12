@@ -7,6 +7,7 @@
 
 ### Installation
 
+I used Visual Studio Code to create this project, but it should work with other text editors aswell.
 The application needs a few librairies & packages to work.
 You will need to install Recharts (render Charts), React Router(to ensure the routing system in the application), Proptypes is utilised to check the type of props.
 
