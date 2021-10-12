@@ -29,7 +29,7 @@ function Home() {
                             Entrez votre numéro d'utilisateur
                             <input min="0" style={{ margin: "0 5px" }} type="number" value={userID} onChange={handleChange} />
                         </label>
-                        <button onClick={handleSubmit}>test</button>
+                        <button onClick={handleSubmit}>Entrez</button>
                     </form>
                 </div>
             </main>

@@ -3,6 +3,11 @@ import { Pie, PieChart, Cell, Label } from "recharts";
 import CustomLabel from "../CustomChartElements/CustomLabel.js";
 import propTypes from "prop-types";
 
+/**
+ * Large Bar Chart component
+ * @param {any} props array of data
+ * @returns {any}
+ */
 const ProgChart = (props) => {
     const [perct, setPerct] = useState(0);
     const [data, setData] = useState([0]);

@@ -12,6 +12,7 @@ import cheeseburgerIcon from "../assets/cheeseburger.svg";
 import appleIcon from "../assets/apple.svg";
 import proteinesIcon from "../assets/proteines.svg";
 
+/** PageContent component, called when a userID is typed & valid */
 const PageContent = (props) => {
     return (
         <div className="content-main">

@@ -27,7 +27,18 @@ function dataModelling(d) {
             });
             return (userHexachart = d[3].data);
         };
+        const formatDate = () => {
+            let values = d[2].data.sessions
+            let weekDays = ["L","M","M","J","V","S","D"]
+            let i = 0
+            values.forEach((element) => {
+                element.day = weekDays[i];
+                i++;
+            })
+            return (userAverage = d[2].data)
+        }
         formatHexachart();
+        formatDate()
         var data = [userInfos, userBarchart, userHexachart, userAverage];
         window.location.href = "http://localhost:3001/user/" + id;
         localStorage.setItem("data", JSON.stringify(data));

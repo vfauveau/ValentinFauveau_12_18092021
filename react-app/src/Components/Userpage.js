@@ -1,6 +1,12 @@
 import { React } from "react";
 import Sidebar from "../Components/Sidebar";
 import PageContent from "../Components/PageContent";
+
+
+/**
+ * Userpage component
+ * @returns {any}
+ */
 function Userpage() {
     var data = JSON.parse(localStorage.getItem("data"))
     var name = data[0].userInfos.firstName

@@ -1,6 +1,11 @@
 import { React, useEffect, useState } from "react";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer, PolarRadiusAxis } from "recharts";
 import propTypes from "prop-types";
+/**
+ * Hexagonal chart, kind / value
+ * @param {any} props
+ * @returns {any}
+ */
 const HexaChart = (props) => {
     const [data, setData] = useState([]);
 
