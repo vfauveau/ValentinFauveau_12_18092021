@@ -5,6 +5,7 @@
     font-weight: 500;
     font-size: 15px;
     margin: 0;
+    padding-left: 30px;
 }
 .barChart-legend{
     display: inline-flex;
@@ -23,4 +24,30 @@
 }
 .black{
     background-color: black;
+}
+.custom-tooltip-areaChart{
+    width: 39px;
+    height: 25px;
+    background-color: white;
+}
+.label{
+    font-size: 8px;
+    align-items: center;
+    text-align: center; 
+    padding-top: 6px;
+    font-weight: 500;
+}
+.custom-tooltip-barChart{
+    width: 39px;
+    height: 63px;
+    background-color: red;
+}
+.label-bar{
+    font-size: 8px;
+    align-items: center;
+    text-align: center; 
+    padding-top: 5px;
+    font-weight: 500;
+    color:white;
+    line-height: 24px;
 }

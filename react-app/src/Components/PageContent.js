@@ -4,7 +4,7 @@ import "../Styles/PageContent.css";
 import propTypes from "prop-types";
 import BarCharts from "./Charts/BarCharts";
 import HexaChart from "./Charts/HexaChart";
-import MoyenneChart from "./Charts/LineChart";
+import Line from "./Charts/AreaChart";
 import ProgChart from "./Charts/DailyProgressionChart";
 import Card from "./Card";
 import fireIcon from "../assets/fire.svg";
@@ -30,7 +30,7 @@ const PageContent = (props) => {
 
                     <div className="content-charts">
                         <div className="chartWrapper">
-                            <MoyenneChart data={props.data}></MoyenneChart>
+                            <Line data={props.data}></Line>
                         </div>
                         <div className="chartWrapper">
                             <HexaChart data={props.data}></HexaChart>
