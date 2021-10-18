@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../Styles/PageContent.css";
 import propTypes from "prop-types";
@@ -12,8 +11,8 @@ import cheeseburgerIcon from "../assets/cheeseburger.svg";
 import appleIcon from "../assets/apple.svg";
 import proteinesIcon from "../assets/proteines.svg";
 
-/** PageContent component, called when a userID is typed & valid */
-const PageContent = (props) => {
+/** Page Content, which contains 4 charts & wrappers */
+function Content(props) {
     return (
         <div className="content-main">
             <header className="content-header">
@@ -25,19 +24,19 @@ const PageContent = (props) => {
             <div className="content-charts-wrapper">
                 <div>
                     <div className="Large-ChartWrapper">
-                        <BarCharts data={props.data}></BarCharts>
+                        <BarCharts chartWidth={props.chartWidth} data={props.data}></BarCharts>
                     </div>
 
                     <div className="content-charts">
                         <div className="chartWrapper">
-                            <Line data={props.data}></Line>
+                            <Line smallChartWidth={props.smallChartWidth} linechart={props.linechart} data={props.data}></Line>
                         </div>
                         <div className="chartWrapper">
-                            <HexaChart data={props.data}></HexaChart>
+                            <HexaChart smallChartWidth={props.smallChartWidth} smallChartHeight={200} data={props.data}></HexaChart>
                         </div>
                         <div className="chartWrapper">
-                            <p style={{ fontWeight: "600", paddingLeft: "30px", paddingTop: "24px", position: "absolute" }}>Score</p>
-                            <ProgChart data={props.data} />
+                            <p style={{ fontWeight: "600", paddingLeft: "30px", paddingTop: "24px", position: "absolute", zIndex: 100 }}>Score</p>
+                            <ProgChart smallChartWidth={props.smallChartWidth} smallChartHeight={200} data={props.data} />
                         </div>
                     </div>
                 </div>
@@ -50,11 +49,13 @@ const PageContent = (props) => {
             </div>
         </div>
     );
-};
-PageContent.propTypes = {
+}
+Content.propTypes = {
     name: propTypes.string,
     icon: propTypes.string,
     keyData: propTypes.object,
-    data: propTypes.array
+    data: propTypes.array,
+    linechart: propTypes.number,
+    smallChartWidth: propTypes.number,
 };
-export default PageContent;
+export default Content;

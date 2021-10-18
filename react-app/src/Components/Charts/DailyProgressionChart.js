@@ -24,9 +24,9 @@ const ProgChart = (props) => {
     }, [perct, props.data]);
 
     return (
-        <div style={{ width: "258px", height: "263px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "inherit", height: "inherit", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: "170px", height: "170px", backgroundColor: "white", borderRadius: "85px", position: "absolute" }}></div>
-            <PieChart position="center" width={260} height={260}>
+            <PieChart position="center" width={200} height={200}>
                 <Pie data={data} cx="50%" cy="50%" dataKey="value" innerRadius={88} outerRadius={100}>
                     {data.map((entry, index) => {
                         if (index === 1) {

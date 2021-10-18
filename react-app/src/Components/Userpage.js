@@ -1,6 +1,6 @@
 import { React } from "react";
 import Sidebar from "../Components/Sidebar";
-import PageContent from "../Components/PageContent";
+import MatchMedia from "../Components/MatchMedia";
 
 
 /**
@@ -16,7 +16,7 @@ function Userpage() {
     return (
         <main>
             <Sidebar />
-            <PageContent data={data} name={name} keyData={keyData}></PageContent>
+            <MatchMedia data={data} name={name} keyData={keyData}></MatchMedia>
         </main>
     );
 }

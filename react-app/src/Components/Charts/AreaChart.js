@@ -30,11 +30,15 @@ const Line = (props) => {
         return null;
     }
     return (
-        <div style={{ display: "flex", flexDirection: "column", backgroundColor: "#FF0000", height: "263px", justifyContent: "center", alignItems: "center" }}>
-            <div style={{ backgroundColor: "#FF0000", height: "48px", width:"147px", color: "#FFFFFF", fontSize: "15px", fontWeight: "500", opacity: "0.5", paddingTop:"29px" }}>
-                Durée moyenne des sessions
-            </div>
-            <AreaChart width={263} height={200} margin={{ top: 5, right: 0, left: 0, bottom: 5 }} style={{ backgroundColor: "#FF0000" }} data={data}>
+        <div className="areaChart-wrapper">
+            <div className="areaChart-title">Durée moyenne des sessions</div>
+            <AreaChart
+                width={props.smallChartWidth}
+                height={props.linechart}
+                margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+                style={{ backgroundColor: "#FF0000" }}
+                data={data}
+            >
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#FF0010" stopOpacity={0.8} />
@@ -59,5 +63,7 @@ const Line = (props) => {
 };
 Line.propTypes = {
     data: propTypes.array,
+    linechart: propTypes.number,
+    smallChartWidth: propTypes.number
 };
 export default Line;

@@ -25,9 +25,9 @@ const BarCharts = (props) => {
         return null;
     }
     return (
-        <div>
+        <div style={{width:"inherit"}}>
             <BarChartLegend />
-            <BarChart width={835} height={250} data={props.data[1].sessions}>
+            <BarChart width={props.chartWidth} height={250} data={props.data[1].sessions}>
                 <CartesianGrid vertical={false} strokeDasharray="4 4" />
                 <XAxis style={{ paddingTop: "10px" }} tickLine={false} />
                 <YAxis
@@ -60,5 +60,6 @@ const BarCharts = (props) => {
 };
 BarCharts.propTypes = {
     data: propTypes.array,
+    chartWidth: propTypes.number
 };
 export default BarCharts;

@@ -46,12 +46,27 @@
     margin-bottom: 28px;
     background-color: #fbfbfb;
 }
-@media (max-width: 1400px){
+@media (max-width: 1300px){
+    .Large-ChartWrapper {
+        max-width: 835px;
+        width: fit-content;
+        height: 320px;
+        margin-bottom: 28px;
+        background-color: #fbfbfb;
+    }
     .content-main{
         margin-left: 3%;
     }
     .content-data-indicator-column {
         margin-left: 3%;
+    }
+    .chartWrapper{
+        width: 200px ;
+        height: 200px;
+    }
+    .content-charts{
+        width: 630px;
+        max-width: 835px;
     }
 }
 @media (max-height:780px){
