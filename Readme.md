@@ -29,11 +29,4 @@ You should see this :
 
 1. Open a new terminal, and type the command `cd react-app `
 2. Install yarn in the folder with the command `yarn install`
-3. Run the following commands :
-
-````
-yarn add recharts
-yarn add proptypes
-yarn add react-router
-````
-4. You can now launch the react application with "yarn run start". You will need to run the application on a different localhost than the api.
+3. You can now launch the react application with "yarn run start". You will need to run the application on a different localhost than the api.
